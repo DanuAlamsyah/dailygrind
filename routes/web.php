@@ -19,11 +19,7 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
 
-Route::get('/posts/{id}', function ($id) {
-    $post = Post::find($id);
-    if (!$post) {
-        abort(404, 'Post not found');
-    }
+Route::get('/posts/{post:slug}', function (post $post) {
     return view('post', ['title' => 'Single Post', 'post' => $post]);
     
 });
