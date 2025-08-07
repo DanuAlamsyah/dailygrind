@@ -21,7 +21,7 @@ class PostFactory extends Factory
         return [
             'title' => $title,
             'slug' => Str::slug($title),
-            'author' => fake()->name(),
+            'author_id' => \App\Models\User::factory(),
             'body' => fake()->text(),
         ];
     }
