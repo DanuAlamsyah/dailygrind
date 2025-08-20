@@ -6,7 +6,7 @@
         <h2 class="text-2xl font-bold">{{ $item['title'] }}</h2>
         </a>
         <div class="text-base text-gray-500">
-            <a href="/authors/{{ $item->author->id }}" class="hover:underline">{{ $item->author->name }}</a> | 2 days ago
+            <a href="/authors/{{ $item->author->username }}" class="hover:underline">{{ $item->author->name }}</a> | 2 days ago
         </div>
         <p class="my-4 font-light">{{ Str::limit($item['body'], 120) }}</p>
         <a href="/posts/{{ $item['slug'] }}" class="text-blue-500 hover:underline">Read More &raquo;</a>

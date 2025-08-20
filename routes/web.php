@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 });
 
-Route::get('/authors/{user}', function (User $user) {
-    return view('posts', ['title' => 'articles by ' . $user->name, 'posts' => $user->posts]);
+Route::get('/authors/{user:username}', function (User $user) {
+    return view('posts', ['title' => count($user->posts) . ' articles by ' . $user->name, 'posts' => $user->posts]);
 });
 
 Route::get('/posts', function () {
